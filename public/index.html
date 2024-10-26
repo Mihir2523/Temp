@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Compiler</title>
+    <style>
+    #codeForm{
+        width: 98vw;
+    }
+    #code{
+        width: 100%;
+        min-height: 20rem;
+    }
+    </style>
+</head>
+<body>
+    <h1>Online Compiler</h1>
+    
+    <form id="dependencyForm">
+        <h3>Install Python Dependencies</h3>
+        <input type="text" id="dependencies" placeholder="Enter dependencies (comma-separated)" />
+        <button type="submit">Install Dependencies</button>
+    </form>
+
+    <form id="codeForm">
+        <h3>Run Python Code</h3>
+        <textarea id="code" placeholder="Enter your code here..."></textarea><br>
+        <button type="submit">Run Code</button>
+    </form>
+
+    <pre id="output"></pre>
+    <img id="outputImage" style="display:none;"/>
+
+    <script>
+        document.getElementById('dependencyForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const dependencies = document.getElementById('dependencies').value;
+            const response = await fetch('/install', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ dependencies })
+            });
+            const result = await response.json();
+            document.getElementById('output').innerText = result.message;
+        };
+
+        document.getElementById('codeForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const code = document.getElementById('code').value;
+            const response = await fetch('/run', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ code })
+            });
+            const result = await response.json();
+            document.getElementById('output').innerText = result.output;
+            if (result.image) {
+                const img = document.getElementById('outputImage');
+                img.src = 'data:image/png;base64,' + result.image;
+                img.style.display = 'block';
+            }else{
+                const img = document.getElementById('outputImage');
+                img.src="";
+                img.style.display = "none";
+            }
+        };
+    </script>
+</body>
+</html>
