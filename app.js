@@ -28,7 +28,7 @@ app.post('/install', (req, res) => {
     const requirementsPath = path.join(__dirname, 'requirements.txt');
     fs.writeFileSync(requirementsPath, depsArray.join('\n'));
 
-    exec(`apt install python3-${requirementsPath}`, { encoding: 'utf8' }, (error, stdout, stderr) => {
+    exec(`sudo apt install python3-${requirementsPath}`, { encoding: 'utf8' }, (error, stdout, stderr) => {
         if (error) {
             return res.json({ message: `Error installing dependencies: ${stderr}` });
         }
