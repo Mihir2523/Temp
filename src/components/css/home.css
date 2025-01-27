@@ -223,6 +223,21 @@
        max-width:none ;/* Remove max-width on small screens*/
    }
 }
+
+
+.images-container {
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    width: 100%; /* Ensure full width */
+}
+
+.images {
+    flex: 1; /* Allow images to grow equally */
+    margin: 10px; /* Space around each image wrapper */
+}
+
+
 .clients {
     padding: 20px;
     color: var(--white);
@@ -236,20 +251,6 @@
     align-items: center; /* Center align items vertically */
     justify-content: space-between;
 }
-
-.images-container {
-    display: flex; /* Flexbox layout for images */
-    overflow: hidden; /* Hide overflow */
-    justify-content: space-between;
-    width: 80%;
-}
-
-.images {
-
-    height: auto;
-    margin: 10px; /* Space around each image wrapper */
-}
-
 .images img {
     width: 200px; /* Set a fixed width for images */
     height: 300px; /* Maintain aspect ratio */
@@ -271,6 +272,10 @@
 .nav-btn[disabled] {
     background-color: var(--accent-gray); /* Gray out disabled buttons */
 }
+
+
+
+
 .contactplease{
     display: flex;
     align-items: center;

@@ -13,7 +13,7 @@ const ImageChanger = () => {
       setCurrentImage((prev) =>
         prev === first ? second : first
       );
-    }, 10000); // Change image every 4 seconds
+    }, 4000); // Change image every 4 seconds
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
@@ -153,7 +153,9 @@ export default function Main() {
             </section>
         </main>
     );
-}function Slider() {
+}
+
+function Slider() {
     const imagePaths = [
         import('../assets/slider/1.jpg'),
         import('../assets/slider/2.jpg'),
@@ -162,6 +164,18 @@ export default function Main() {
         import('../assets/slider/Ashutosh.jpg'),
         import('../assets/slider/alsa.jpg'),
     ];
+
+    const getItemsPerPage = () => {
+        const width = window.innerWidth;
+        if (width > 1200) return 3; // Large screens
+        if (width > 768) return 2;  // Medium screens
+        return 1;                   // Small screens
+    };
+
+    const [images, setImages] = React.useState([]);
+    const [currentIndex, setCurrentIndex] = React.useState(0);
+    const [itemsPerPage, setItemsPerPage] = React.useState(getItemsPerPage());
+
     React.useEffect(() => {
         Promise.all(imagePaths).then((importedImages) => {
             const duplicatedImages = [
@@ -169,12 +183,23 @@ export default function Main() {
             ];
             setImages(duplicatedImages);
         });
-    });
 
-    const [images, setImages] = React.useState([]);
-    const [currentIndex, setCurrentIndex] = React.useState(0);
-    const itemsPerPage = 3; // Number of images to display at once
+        // Update items per page on resize
+        const handleResize = () => {
+            const newItemsPerPage = getItemsPerPage();
+            setItemsPerPage(newItemsPerPage);
 
+            // Adjust currentIndex based on new items per page
+            if (currentIndex + newItemsPerPage > images.length) {
+                setCurrentIndex(Math.max(0, images.length - newItemsPerPage));
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        
+        // Cleanup event listener on component unmount
+        return () => window.removeEventListener('resize', handleResize);
+    }, [currentIndex, images.length]); // Add dependencies
 
     const handleNext = () => {
         if (currentIndex + itemsPerPage < images.length) {
