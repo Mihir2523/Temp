@@ -177,7 +177,8 @@ a.active p{
   .hamburger span {
     width: 2rem;
     height: 3px;
-    background-color: white;
+    color: var(--white);
+    background-color: var(--white);
     transition: var(--transition);
     transform-origin: center;
   }
