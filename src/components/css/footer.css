@@ -1,0 +1,75 @@
+footer{
+	background-color: #161616;
+	color: white;
+	height: 9rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.footer-wrapper{
+	width: 80%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.footer-wrapper p{
+	font-size: 1.4rem;
+	letter-spacing: 0.1rem;
+}
+.icon-wrapper{
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	align-items: center;
+}
+.foot-icons{
+	display: flex;
+	gap: 3rem;
+}
+.foot-icons a {
+  font-size: 2rem;
+  color: white;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.foot-icons a:hover {
+  &:nth-child(1) { /* Phone icon */
+    color: #4CAF50; /* Green */
+  }
+  &:nth-child(2) { /* Facebook icon */
+    color: #3b5998; /* Facebook blue */
+  }
+  &:nth-child(3) { /* LinkedIn icon */
+    color: #0077B5; /* LinkedIn blue */
+  }
+  &:nth-child(4) { /* WhatsApp icon */
+    color: #25D366; /* WhatsApp green */
+  }
+  &:nth-child(5) {
+  	color: hotpink;
+  }
+  &:nth-child(6) { /* Twitter icon */
+    color: #1DA1F2; /* Twitter blue */
+  }
+}
+@media screen and (max-width:788px){
+	footer{
+		padding: 2rem 0;
+		height: auto;
+	}
+	.footer-wrapper{
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		width: 100%;
+	}
+	.icon-wrapper{
+		width: 100%;
+		padding-top: 1rem;
+		border-top: 1px solid var(--main-white);
+	}
+	h2{
+		font-size: 1.7rem;
+	}
+}
