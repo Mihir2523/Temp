@@ -13,7 +13,7 @@ const ImageChanger = () => {
       setCurrentImage((prev) =>
         prev === first ? second : first
       );
-    }, 4000); // Change image every 4 seconds
+    }, 10000); // Change image every 4 seconds
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
