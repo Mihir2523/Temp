@@ -5,13 +5,45 @@ import {Link} from "react-router-dom"
 import { FaCertificate, FaLeaf, FaUtensils, FaShieldAlt } from 'react-icons/fa';
 
 import "./css/home.css";
+const ImageChanger = () => {
+  const [currentImage, setCurrentImage] = React.useState(first);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) =>
+        prev === first ? second : first
+      );
+    }, 4000); // Change image every 4 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
+  const mainImagesStyle = {
+    position: 'relative',
+    overflow: 'hidden',
+    borderRadius: '10px',
+    height: '500px',
+    backgroundImage: `url(${currentImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    animation: 'fadeInOut 8s infinite', // Animation for fading effect
+    margin: '1rem 0',
+    transition: 'all 0.3s linear',
+  };
+  return (
+    <div style={mainImagesStyle}>
+      <div className="overlay">
+        <h2>ISO Consulting</h2>
+      </div>
+    </div>
+  );
+};
 
 export default function Main() {
     const images = [
         import('../assets/slider/1.jpg'),
         import('../assets/slider/2.jpg'),
         import('../assets/slider/3.jpg'),
-        import('../assets/slider/4.jpg'),
         import('../assets/slider/Ashutosh.jpg'),
         import('../assets/slider/alsa.jpg'),
         import('../assets/slider/aura.jpg'),
@@ -49,21 +81,21 @@ export default function Main() {
     const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
 
     React.useEffect(() => {
-        Promise.all(images).then((importedImages) => {
+        Promise.all(images)
+        .then((importedImages) => {
             const duplicatedImages = [
                 ...importedImages.map(img => img.default),
                 ...importedImages.map(img => img.default)
             ];
             setLoadedImages(duplicatedImages);
         });
+
     }, []);
 
     return (
         <main>
             <section className="container">
-                <div className="mainimages">
-                    <div className="overlay"><h2>Consulting</h2></div>
-                </div>
+                <ImageChanger />
                 <div className="gap"></div>
                 <div className="slider">
                     <div className="list">
@@ -123,33 +155,26 @@ export default function Main() {
     );
 }function Slider() {
     const imagePaths = [
-        "../assets/slider/aura.jpg",
-        "../assets/slider/bhagwati.jpg",
-        "../assets/slider/caps.jpg",
-        "../assets/slider/4.jpg",
-        "../assets/slider/ntex.jpg",
-        "../assets/slider/rasna.jpg",
-        // Add more image paths as needed
+        import('../assets/slider/1.jpg'),
+        import('../assets/slider/2.jpg'),
+        import('../assets/slider/3.jpg'),
+        import('../assets/slider/rasna.jpg'),
+        import('../assets/slider/Ashutosh.jpg'),
+        import('../assets/slider/alsa.jpg'),
     ];
+    React.useEffect(() => {
+        Promise.all(imagePaths).then((importedImages) => {
+            const duplicatedImages = [
+                ...importedImages.map(img => img.default)
+            ];
+            setImages(duplicatedImages);
+        });
+    });
 
     const [images, setImages] = React.useState([]);
     const [currentIndex, setCurrentIndex] = React.useState(0);
     const itemsPerPage = 3; // Number of images to display at once
 
-    React.useEffect(() => {
-        const loadImages = async () => {
-            try {
-                const importedImages = await Promise.all(
-                    imagePaths.map((path) => import(/* @vite-ignore */ `${path}`))
-                );
-                setImages(importedImages.map((img) => img.default)); // Set the default exports of the imported images
-            } catch (error) {
-                console.error("Error loading images:", error);
-            }
-        };
-
-        loadImages();
-    }, []);
 
     const handleNext = () => {
         if (currentIndex + itemsPerPage < images.length) {

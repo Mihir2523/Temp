@@ -7,6 +7,19 @@
     margin: 1rem 0;
     transition: all 0.3s linear;
 }
+/* In your CSS file (e.g., ImageChanger.css) */
+@keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes backgroundChange {
     0% {
         background-image: url('./src/assets/main/first.jpg'); /* First image */
@@ -162,7 +175,25 @@
     font-size: 1.5rem;
     color: var(--white);
 }
+@media (max-width:990px){
 
+   .basicinfo {
+       margin-right : 0; 
+       margin-bottom :20px; 
+       text-align:center; /* Center text in basic info section on small screens */
+   }
+
+   .allservices {
+       flex-direction : column; /* Stack cards vertically on smaller screens */
+       align-items:center; /* Center align cards on small screens */
+       gap:.5rem ;/* Space between cards*/
+   }
+
+   .servicecard {
+       width : calc(100% - 30%); /* Full width on small screens with some margin */
+       max-width:none ;/* Remove max-width on small screens*/
+   }
+}
 @media (max-width :768px) {
     .contactplease{
         display: flex;
@@ -214,13 +245,13 @@
 }
 
 .images {
-    width: calc(100% / 3);
+
     height: auto;
     margin: 10px; /* Space around each image wrapper */
 }
 
 .images img {
-    width: 250px; /* Set a fixed width for images */
+    width: 200px; /* Set a fixed width for images */
     height: 300px; /* Maintain aspect ratio */
     border-radius: 5px; /* Rounded corners for images */
 }
