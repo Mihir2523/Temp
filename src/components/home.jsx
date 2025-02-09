@@ -13,7 +13,7 @@ const ImageChanger = () => {
       setCurrentImage((prev) =>
         prev === first ? second : first
       );
-    }, 10000); // Change image every 4 seconds
+    }, 4000); // Change image every 4 seconds
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
@@ -41,41 +41,42 @@ const ImageChanger = () => {
 
 export default function Main() {
     const images = [
-        import('../assets/slider/1.jpg'),
-        import('../assets/slider/2.jpg'),
-        import('../assets/slider/3.jpg'),
-        import('../assets/slider/Ashutosh.jpg'),
-        import('../assets/slider/alsa.jpg'),
-        import('../assets/slider/aura.jpg'),
-        import('../assets/slider/bhagwati.jpg'),
-        import('../assets/slider/brixton.jpg'),
-        import('../assets/slider/caps.jpg'),
-        import('../assets/slider/deo.jpg'),
-        import('../assets/slider/enhanced.jpg'),
-        import('../assets/slider/excel.jpg'),
-        import('../assets/slider/fab-iron.jpg'),
-        import('../assets/slider/guru.jpg'),
-        import('../assets/slider/heavy.jpg'),
-        import('../assets/slider/jaivel.jpg'),
-        import('../assets/slider/jayveer.jpg'),
-        import('../assets/slider/karishma.jpg'),
-        import('../assets/slider/labh-eng.jpg'),
-        import('../assets/slider/lion-color.jpg'),
-        import('../assets/slider/mahalaxmi.jpg'),
-        import('../assets/slider/mett-bio.jpg'),
-        import('../assets/slider/ncore.jpg'),
-        import('../assets/slider/ntex.jpg'),
-        import('../assets/slider/powerful.jpg'),
-        import('../assets/slider/rasna.jpg'),
-        import('../assets/slider/shivam.jpg'),
-        import('../assets/slider/siddhivinayak.jpg'),
-        import('../assets/slider/sor.jpg'),
-        import('../assets/slider/unick.jpg'),
-        import('../assets/slider/verman.jpg'),
-        import('../assets/slider/vijay-coat.jpg'),
-        import('../assets/slider/vijay-shree.jpg'),
-        import('../assets/slider/zeal.jpg')
-    ];
+          import('../assets/slider/1_DIFD LOGO.jpg'),
+          import('../assets/slider/2_HEMPEL.png'),
+          import('../assets/slider/3_JINDAL.jpg'),
+          import('../assets/slider/4_HIFLEX.jpg'),
+          import('../assets/slider/5_ESSEM.png'),
+          import('../assets/slider/6_ALLMARC.jpg'),
+          import('../assets/slider/7_INDUTCH.png'),
+          import('../assets/slider/8_OCTANT.jpg'),
+          import('../assets/slider/9_BANKIN.jpg'),
+          import('../assets/slider/10_FINOX.png'),
+          import('../assets/slider/11_SAFEX INDUSTRIES LIMITED.png'),
+          import('../assets/slider/12_KARAMTARA.png'),
+          import('../assets/slider/13_SHAIFALI STEELS LIMITED.jpg'),
+          import('../assets/slider/14_DELITE.png'),
+          import('../assets/slider/15_LINET.png'),
+          import('../assets/slider/16_LSW.png'),
+          import('../assets/slider/17_SHREE HARIHAR.png'),
+          import('../assets/slider/18_ANJAR.png'),
+          import('../assets/slider/19_BACANCY.jpg'),
+          import('../assets/slider/20_FLEXISHINE POLYBENDS LLP.png'),
+          import('../assets/slider/21_GANPAT UNIVERSITY.jpg'),
+          import('../assets/slider/22_MATRIX ENGINEERS.png'),
+          import('../assets/slider/23_POWERFUL.png'),
+          import('../assets/slider/24_ROYAL.png'),
+          import('../assets/slider/25_SANKWALA.png'),
+          import('../assets/slider/26_SUKRIT INDUSTRIES.png'),
+          import('../assets/slider/27_TECHFLOW.png'),
+          import('../assets/slider/28_PITRUKRUPA ENGINEERING.png'),
+          import('../assets/slider/29_SHREEJI.png'),
+          import('../assets/slider/30_ARD.png'),
+          import('../assets/slider/31_SELEX.png'),
+          import('../assets/slider/32_SIGMA CORPORATION.png'),
+          import('../assets/slider/33_PNEUFLOW.jpg'),
+          import('../assets/slider/34_PNEUTORK.png'),
+          import('../assets/slider/35_PRECISION TECHNOPLAST PVT. LTD..png')
+        ];
 
     const [loadedImages, setLoadedImages] = React.useState([]);
     const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
@@ -123,22 +124,22 @@ export default function Main() {
                     </h2>
             <div className="allservices">
                 <div className="servicecard">
-                <FaCertificate className="icon" />
+                <FaCertificate className="iconn col1" />
                 <h3>Quality Management</h3>
                 <p>Achieve excellence in quality management with our ISO 9001 certification services.</p>
             </div>
             <div className="servicecard">
-                <FaLeaf className="icon" />
+                <FaLeaf className="iconn col2" />
                 <h3>Environmental Management</h3>
                 <p>Enhance your environmental management practices with our ISO 14001 certification.</p>
             </div>
             <div className="servicecard">
-                <FaUtensils className="icon" />
+                <FaUtensils className="iconn col3" />
                 <h3>Food Safety Management System</h3>
                 <p>Ensure food safety and quality with our ISO 22000 certification services.</p>
             </div>
             <div className="servicecard">
-                <FaShieldAlt className="icon" />
+                <FaShieldAlt className="iconn col4" />
                 <h3>Occupational Health and Safety</h3>
                 <p>Ensure occupational health and safety with our ISO 45001 certification services.</p>
             </div>
@@ -157,12 +158,23 @@ export default function Main() {
 
 function Slider() {
     const imagePaths = [
-        import('../assets/slider/1.jpg'),
-        import('../assets/slider/2.jpg'),
-        import('../assets/slider/3.jpg'),
-        import('../assets/slider/rasna.jpg'),
-        import('../assets/slider/Ashutosh.jpg'),
-        import('../assets/slider/alsa.jpg'),
+        import('../assets/client/agro-based-industry.jpg'),
+        import('../assets/client/hospitals.jpg'),
+        import('../assets/client/automobile-Industry.jpg'),
+        import('../assets/client/pharmaceuticals-industry.jpg'),
+        import('../assets/client/chemical-industry.jpg'),
+        import('../assets/client/transportation-logistics.jpg'),
+        import('../assets/client/food-processing-beverages.jpg'),
+    ];
+
+    const industryList = [
+        { industry: "Agro-based Industry", image: '../assets/client/agro-based-industry.jpg' },
+        { industry: "Hospitals", image: '../assets/client/hospitals.jpg' },
+        { industry: "Automobile Industry", image: '../assets/client/automobile-Industry.jpg' },
+        { industry: "Pharmaceuticals Industry", image: '../assets/client/pharmaceuticals-industry.jpg' },
+        { industry: "Chemical Industry", image: '../assets/client/chemical-industry.jpg' },
+        { industry: "Transportation & Logistics", image: '../assets/client/transportation-logistics.jpg' },
+        { industry: "Food Processing & Beverages", image: '../assets/client/food-processing-beverages.jpg' }
     ];
 
     const getItemsPerPage = () => {
@@ -178,10 +190,11 @@ function Slider() {
 
     React.useEffect(() => {
         Promise.all(imagePaths).then((importedImages) => {
-            const duplicatedImages = [
-                ...importedImages.map(img => img.default)
-            ];
-            setImages(duplicatedImages);
+            const combinedData = importedImages.map((img, index) => ({
+                src: img.default,
+                industry: industryList[index].industry
+            }));
+            setImages(combinedData);
         });
 
         // Update items per page on resize
@@ -196,7 +209,7 @@ function Slider() {
         };
 
         window.addEventListener('resize', handleResize);
-        
+
         // Cleanup event listener on component unmount
         return () => window.removeEventListener('resize', handleResize);
     }, [currentIndex, images.length]); // Add dependencies
@@ -215,15 +228,15 @@ function Slider() {
 
     return (
         <div className="clients">
-            <h1 className="allservicestitle">Types of Clients Catered - ISO Certification in Ahmedabad, ISO Consultant in Ahmedabad</h1>
+            <h1 className="allservicestitle bottomtitle">Types of Clients Catered - ISO Certification in Ahmedabad, ISO Consultant in Ahmedabad</h1>
             <p className="para">Hire experienced ISO Certification Consultant in Ahmedabad for quick assistance with the ISO certification process.</p>
             <div className="imageswrapper">
                 <button onClick={handlePrev} disabled={currentIndex === 0} className="nav-btn">←</button>
                 <div className="images-container">
-                    {images.slice(currentIndex, currentIndex + itemsPerPage).map((image, index) => (
+                    {images.slice(currentIndex, currentIndex + itemsPerPage).map((item, index) => (
                         <div key={index} className="images">
-                            <img src={image} alt={`Client ${index + currentIndex + 1}`} />
-                            <h2>Some Industry</h2>
+                            <img src={item.src} alt={`Client ${index + currentIndex + 1}`} />
+                            <h2>{item.industry}</h2>
                         </div>
                     ))}
                 </div>

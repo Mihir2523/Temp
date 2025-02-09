@@ -52,13 +52,13 @@
 
 /* Optional styles for better visibility */
 .overlay h2 {
-    font-size: 2rem;
+    font-size: 3.5rem;
     text-align: center;
 }
 
 .slider {
     width: 100%;
-    height: 180px;
+    height: 140px;
     overflow: hidden;
     position: relative;
 }
@@ -77,13 +77,13 @@
 
 .item {
     width: 300px;
-    height: 180px;
+    height: 130px;
     flex-shrink: 0;
 }
 
 .item img {
-    width: 100%;
-    height: auto;
+    width: 300px;
+    height: 130px;
     object-fit: cover; /* Maintain aspect ratio and cover the area */
 }
 
@@ -105,59 +105,118 @@
     gap: 2rem;
     margin-right: 30px; /* Increased margin for spacing */
     padding-bottom: 5rem;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--main-white);
 }
 .allservicestitle{
-    text-align: center; margin: 20px 0; color: var(--sec-btn);
-    font-size: 2rem;
+    text-align: center; margin: 20px 0; color: var(--blue);
+    font-size: 2.7rem;
     margin-top: 5rem;
     position: relative;
 }
 .allservicestitle::before{
     left: 50%;
 }
-.allservices {
-   display:flex; 
-   gap:.5rem; /* Space between cards */
-}
 
 .servicecard {
-    min-height: 400px;
-    background-color: var(--primary-color); /* Changed to a darker primary color */
-    border: 1px solid var(--secondary-orange); /* Use a vibrant color for the border */
-    border-radius: 8px; /* Slightly rounded corners */
-    padding: 20px; /* Increased padding */
-    margin: 15px; /* Increased margin */
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.3); /* Enhanced shadow for depth */
-    transition: var(--transition);
+    flex: 0 1 calc(33.333% - 1.5rem);
+    min-width: 320px;
+    max-width: 420px;
+    background-color: var(--headline); /* Deep blue-gray background */
+    border-radius: 15px;
+    padding: 25px;
+    margin: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
+
 }
+
+.servicecard::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    transform: rotate(-45deg);
+    opacity: 0.1;
+    transition: all 0.3s ease;
+}
+
+.servicecard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+.servicecard:hover::before {
+    opacity: 0.2;
+}
+
+.servicecard .iconn {
+    font-size: 4rem;
+    color: var(--primary-orange);
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+    background-color: none;
+}
+
 .servicecard h3 {
-    margin-top: 15px; /* Increased margin for spacing */
-    font-size: 1.8rem; /* Increased font size */
-    color: var(--main-btn); /* Use headline color for headings */
+    font-size: 2.2rem;
+    color: var(--card-color);
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 600;
 }
 
 .servicecard p {
-    font-size: 1.5rem; /* Increased paragraph font size */
-    color: var(--text-color); /* Use light text color for paragraphs */
+    font-size: 1.7rem;
+    color: var(--white);
+    text-align: left;
+    line-height: 1.6;
+    flex-grow: 1;
 }
 
-.icon {
-    font-size: 5rem; /* Increased icon size */
-    color: var(--white); /* Icon color */
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .servicecard {
+        flex: 0 1 calc(50% - 1.5rem);
+        min-width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .servicecard {
+        flex: 0 1 100%;
+        max-width: 100%;
+        margin: 10px 0;
+    }
+}
+
+.allservices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 20px;
+    width: 100%;
 }
 
 /* Additional styles for headings in basicinfo section */
 .basicinfo h2 {
-    font-size: 2rem; /* Font size for subheading */
-    color: var(--main-btn); /* Use main button color for subheading */
+    font-size: 4rem; /* Font size for subheading */
+    color: var(--blue); /* Use main button color for subheading */
+    text-align: left;
 }
 
 .basicinfo h1 {
-    font-size: 2.5rem; /* Font size for main heading */
+    font-size: 2.6rem; /* Font size for main heading */
     color: var(--sec-btn); /* Use secondary button color for main heading */
     position: relative;
     text-align: left;
@@ -172,8 +231,9 @@
     width: 10%;
 }
 .basicinfo p{
-    font-size: 1.5rem;
-    color: var(--white);
+    font-size: 1.8rem;
+    color: var(--main-white);
+    text-align: left;
 }
 @media (max-width:990px){
 
@@ -212,37 +272,32 @@
        text-align:center; /* Center text in basic info section on small screens */
    }
 
-   .allservices {
-       flex-direction : column; /* Stack cards vertically on smaller screens */
-       align-items:center; /* Center align cards on small screens */
-       gap:.5rem ;/* Space between cards*/
-   }
-
-   .servicecard {
-       width : calc(100% - 30px); /* Full width on small screens with some margin */
-       max-width:none ;/* Remove max-width on small screens*/
-   }
 }
-
 
 .images-container {
     display: flex;
     overflow: hidden;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
     width: 100%; /* Ensure full width */
+    gap: 2rem;
+
 }
 
 .images {
-    flex: 1; /* Allow images to grow equally */
     margin: 10px; /* Space around each image wrapper */
+    padding: 1rem;
+    border-radius: 2rem;
+    background-color: var(--white);
 }
 
 
 .clients {
     padding: 20px;
-    color: var(--white);
+    color: var(--main-white);
     border-radius: 10px;
     width: 100%;
+    text-align: center;
 }
 .imageswrapper {
     margin-top: 2rem;
@@ -270,22 +325,19 @@
     background-color: var(--sec-btn); /* Change color on hover */
 }
 .nav-btn[disabled] {
-    background-color: var(--accent-gray); /* Gray out disabled buttons */
+    background-color: var(--text-color); /* Gray out disabled buttons */
 }
-
-
-
 
 .contactplease{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     padding: 2rem 0;
-    background-color: var(--dark-background);
+    background-color: var(--secondary-orange);
 }
 .contactplease h1{
     font-size: 2rem;
-    color: var(--main-btn);
+    color: var(--white);
 }
 .contactplease button{
     padding: 0.8rem 1.3rem;
@@ -297,4 +349,44 @@
 }
 .contactplease a{
     color: var(--white);
+}
+
+.bottomtitle{
+    font-size: 2.7rem;
+    text-align: left;
+    color:var(--headline); 
+    position: relative;
+}
+.bottomtitle::before{
+    content: '';
+    position: absolute;
+    background-color: var(--headline);
+    width: 20%;
+    left: 0;
+    bottom: -1rem;
+    height: 0.3rem;
+    opacity: 0.8;
+}
+.col1 {
+  fill: #F39C12; /* Vivid Red-Orange */
+  display: inline-block;
+  padding: 5px;
+}
+
+.col2 {
+  fill: #2ECC71; /* Deep Purple */
+  display: inline-block;
+  padding: 5px;
+}
+
+.col3 {
+  fill: #7D3C98; /* Emerald Green */
+  display: inline-block;
+  padding: 5px;
+}
+
+.col4 {
+  fill: #FF5733; /* Bright Orange */
+  display: inline-block;
+  padding: 5px;
 }

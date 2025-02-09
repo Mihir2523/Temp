@@ -2,21 +2,22 @@ main{
 	display: flex;
 	justify-content: center;
 	height: auto;
+	min-height: 100vh;
 }
 .container-wrapper{
 	margin: 0 auto;
-	width: 100%;
+	width: 90%;
 	padding: 3rem;
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
+	gap: 1rem;
 }
 .para{
 	color: var(--main-white);
-	letter-spacing: 0.15rem;
+	letter-spacing: 0.1rem;
 	font-weight: 500;
-	margin-top: 2rem;
-	font-size: 1.8rem;
+	margin-top: 1rem;
+	font-size: 1.6rem;
 	line-height: 2.75rem;
 }
 .simplelist{
@@ -25,10 +26,10 @@ main{
 	gap: 1rem;
 }
 .simplelist li{
-	font-size: 1.8rem;
+	font-size: 1.7rem;
 	letter-spacing: 0.15rem;
 	line-height: 2.8rem;
-	color: var(--white);
+	color: var(--main-white);
 }
 .simplelist li::before{
 	content: '';
@@ -39,36 +40,49 @@ main{
 	display: inline-block;
 	margin-right: 1rem;
 }
+.h-para>p{
+	margin-top: 1.5rem;
+}
 .h-para,.h-list{
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
 	display: inline;
-	margin-bottom: 2rem;
+	margin-bottom: 1.5rem;
 }
 .h-list ul{
 	padding-left: 0.5rem;
 	margin-top: 2rem;
 }
-.h-para>h1,.h-list>h1{
-	font-size: 2.6rem;
-	position: relative;
-	color: var(--main-btn);
-	display:inline;
-}
-.h-para>h1::before,.h-list>h1::before{
-	position: absolute;
-	left: 0;
-	bottom: -0.8rem;	
-	content: '';
-	width: 80%;
-	height: 0.3rem;
-	background-color: var(--white);
+.h-para>h1, .h-list>h1 {
+    font-size: 2.3rem;
+    position: relative; /* Changed from display:inline to positioning context*/
+    color: var(--secondary-orange);
+    display: inline-block; /* Ensure it only takes up the space of the text */
+    font-weight: bold; /* Added for emphasis */
 }
 
+.h-para>h1::before, .h-list>h1::before {
+    position: absolute;
+    left: 0;
+    top: 100%; /* Position the line below the text */
+    content: '';
+    width: 30%; /* Make the line span the full width of the text */
+    height: 0.3rem;
+    background-color: var(--primary-orange);
+    margin-top: 0.5rem; /* Add space between the text and the line */
+}
+.sub-head>h1{
+	color: var(--main-white);
+	font-size: 1.7rem;
+}
+.sub-head>h1::before{
+	content: '';
+	display: none;
+}
 .sub-list>h1{
-	font-size: 1.9rem;
-	color: var(--white);
+	font-size: 1.8rem;
+	color: var(--main-white);
 }
 .sub-list>h1::before{
 	content: '';
@@ -80,11 +94,33 @@ main{
 	justify-content: center;
 }
 .heading h1{
-	margin-top:4rem;
-	margin-bottom: 2rem;
-	font-size: 3.5rem;
+	margin-top:3rem;
+	margin-bottom: 1.5rem;
+	font-size: 3rem;
 	text-align: center;
-	color: var(--sec-btn);
+	color: var(--blue);
 	display: inline;
-	border-bottom: 2px solid var(--sec-btn);
+	font-weight: 600;
+	letter-spacing: 0.2rem;
+	text-transform: uppercase;
+}
+.image-para{
+	display: flex;
+	gap:2rem;
+}
+.image-para img{
+	margin-top: 5rem;
+	width: 300px;
+	height: 180px;
+	object-fit: cover;
+}
+@media (max-width:800px){
+	.container-wrapper{
+		width: 100%;
+		padding: 1rem;
+	}
+	.image-para{
+		align-items: center;
+		flex-direction: column;
+	}
 }

@@ -7,7 +7,7 @@ export default function About() {
       <section className="container">
         <div className="heading"><h1>Quality Consulting</h1></div>
         <section className="container-wrapper">
-          <p className="para">The Company is promoted by 10 years industrial experience related ISO Management system with an aim to provide effective and result oriented services of ISO 9001:2015 Quality management system, EN ISO 3834-2:2021- Quality requirements for fusion welding of metallic material- Comprehensive Quality Requirements , EN ISO 1090-2:2018 Execution of steel structures and aluminum structures - Technical requirements for steel structures,  ISO 14001:2015 Environment Management System, ISO 45001:2018 Occupational Health & Safety Management System, ISO 27001:2013 Information Security Management System, IATF 16949:2016 Automotive Quality Management System, ISO 22163:2017 International
+          <p className="para">The Company is promoted by 12 years industrial experience related ISO Management system with an aim to provide effective and result oriented services of ISO 9001:2015 Quality management system, EN ISO 3834-2:2021- Quality requirements for fusion welding of metallic material- Comprehensive Quality Requirements , EN ISO 1090-2:2018 Execution of steel structures and aluminum structures - Technical requirements for steel structures,  ISO 14001:2015 Environment Management System, ISO 45001:2018 Occupational Health & Safety Management System, ISO 27001:2013 Information Security Management System, IATF 16949:2016 Automotive Quality Management System, ISO 22163:2017 International
 Standard For Specially Railway Industry, HACCP- Hazard Analysis Critical Control Points,           ISO 22000:2018 Food Safety Management System, FSSC 22000- Food Safety Standard Certification, BRC for Food & Packaging Material, Eco Vadis CSR Rating, SA 8000: 2014 Social Accountability, SMETA- SEDEX 6.1 Member of Ethical Trade Audit, ISO 17025:2017 NABL- National Accreditation Board of Laboratory, 5s Japanese techniques, 7 quality control tools & other statistical tools & techniques, IATF Core Tools etc.
 Quality Consulting is certified ISO Standard various type of industries like Engineering, Fabrications, Machinery, Pharmaceutical, Packaging, Food, Automotive, Textile, Rubber, Civil, Laboratory like Food, Pharmaceutical, Engineering, Packaging, Civil etc.
 Quality Consulting firm is register MSME Udyog Adhar number: GJ01D0105671, dated: 09.05.2018. Mr. Jaydev Parmar is proprietor of Quality Consulting. He was highly experience in quality management system as well as customer audit compliances. He has already faced Tata Motors Ltd, Nestle, CLW / DLW, SPX Flow, Rexroth, Ingersoll Rand, Senvion Wind Technology Pvt. Ltd, INOX wind Ltd, Siemens Limited, Siemens Gamesha, Sanmar Group, NTPC , BHEL, Micro finish Valves Pvt. Ltd, Toshima India Pvt. Ltd , Delvol Flow Controls etc.
@@ -81,5 +81,5 @@ Mr. Jaydev Parmar is complete Bachelor of commerce and MSC. QPM (Master in quali
             }
           </ul>
   6. Heading With Paragraph and Image , Headigg with Paragraphs and Images
-
+    
 */

@@ -15,17 +15,17 @@ main {
 .contact-container {
   width: 100%;
   max-width: 1200px;
-  background-color: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   padding: 3rem;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  background: var(--white);
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .contact {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4rem;
 }
 
 .content {
@@ -35,25 +35,35 @@ main {
 
 .content h2 {
   font-size: 4rem;
-  color: var(--primary-orange);
   margin-bottom: 1.5rem;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
+  color: var(--primary-color);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .content p {
   font-size: 1.8rem;
-  color: var(--light-text);
   line-height: 1.6;
   font-weight: 300;
+  color: var(--text-color);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
+
+/* ========================= Contact Info and SVG Section ========================= */
 
 .in-container {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 4rem;
+  margin-bottom: 5rem;
 }
 
 .contactinfo {
@@ -63,8 +73,9 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  border: 1px solid rgba(255, 137, 6, 0.2);
 }
+
+/* Contact Info Box Styling */
 
 .box {
   display: flex;
@@ -72,9 +83,9 @@ main {
   gap: 2rem;
   padding: 1.5rem;
   border-radius: 10px;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* Hide overflow for pseudo-element effect */
 }
 
 .box::before {
@@ -84,9 +95,10 @@ main {
   left: 0;
   width: 0;
   height: 100%;
-  background-color: rgba(255, 137, 6, 0.1);
+  background-color: var(--primary-color);
   transition: width 0.3s ease;
   z-index: -1;
+  opacity: 0.1;
 }
 
 .box:hover::before {
@@ -95,50 +107,62 @@ main {
 
 .box:hover {
   transform: translateX(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .icon {
   font-size: 3rem;
-  color: var(--primary-orange);
-  background-color: rgba(242, 95, 76, 0.2);
   padding: 1rem;
   border-radius: 50%;
-  transition: all 0.3s ease;
+  transition: var(--transition);
+  opacity: 0.8;
+  color: var(--text-color);
+  background-color: var(--main-btn);
 }
 
 .box:hover .icon {
-  color: var(--secondary-orange);
-}
-
-.text {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  opacity: 1;
+  color: var(--white);
+  background-color: var(--secondary-orange);
 }
 
 .text h3 {
   font-size: 2rem;
-  color: var(--primary-orange);
   font-weight: 600;
   letter-spacing: 0.5px;
+  color: var(--primary-color);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .text p {
   font-size: 1.6rem;
-  color: var(--light-text);
   font-weight: 400;
+  color: var(--text-color);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
+
+/* Social Links Styling */
 
 .social-links {
   text-align: center;
   margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem; /* Ensure spacing even if social links are present */
 }
 
 .social-links h2 {
-  color: var(--primary-orange);
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  letter-spacing: 1px;
+  color: var(--primary-orange);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .social-icons {
@@ -150,22 +174,25 @@ main {
 
 .social-icons li {
   font-size: 2.5rem;
-  color: var(--light-text);
-  transition: all 0.3s ease;
+  transition: var(--transition);
   cursor: pointer;
+  color: var(--primary-color);
 }
 
 .social-icons li:hover {
-  color: var(--secondary-orange);
   transform: scale(1.2);
+  color: var(--blue);
 }
 
+/* SVG Section Styling */
+
 .svg {
-  flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
   border-radius: 15px;
+  min-height: 300px; /* Ensure it has some height to center within */
+  margin-bottom: 2rem; /* Add spacing below the SVG */
 }
 
 .svg img {
@@ -173,47 +200,63 @@ main {
   max-height: 500px;
   object-fit: contain;
   border-radius: 15px;
+  box-shadow: 0 0 5px var(--text-color);
 }
 
-/* Responsive Design */
+/* Google Maps Styling */
+.google-maps {
+  margin-top: 2rem; /* Add space above the map */
+  border-radius: 15px;
+  overflow: hidden; /* Ensure the map respects the border-radius */
+}
+
+/* ========================= Responsive Design ========================= */
+
 @media screen and (max-width: 1024px) {
   .in-container {
     flex-direction: column;
     align-items: center;
   }
 
-  .contactinfo, .svg {
-    width: 100%;
-    max-width: 600px;
+  .svg {
+    min-height: auto; /*Reset min-height*/
   }
+
+
 }
 
 @media screen and (max-width: 600px) {
-  html {
-    font-size: 50%;
+  .contact-container {
+    width: 98%;
+    padding: 1.5rem;
   }
 
-  .contact {
-    padding: 2rem;
+  .content h2 {
+    font-size: 2.5rem;
   }
 
-  .social-icons {
-    flex-wrap: wrap;
-    gap: 1.5rem;
+  .content p {
+    font-size: 1.4rem;
   }
-}
 
-/* Google Maps Responsive */
-.google-maps {
-  width: 100%;
-  margin-top: 4rem;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-.website p{
-  color: var(--sec-btn);
-}
-.website:hover{
-  border-bottom: 1px solid var(--sec-btn);
+  .icon {
+    font-size: 2rem;
+    padding: 0.6rem;
+  }
+
+  .text h3 {
+    font-size: 1.6rem;
+  }
+
+  .social-links h2 {
+    font-size: 1.8rem;
+  }
+
+  .social-icons li {
+    font-size: 1.8rem;
+  }
+
+  .svg {
+    max-height: 200px;
+  }
 }

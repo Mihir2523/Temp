@@ -43,7 +43,7 @@ export default function Contact() {
                     <p>B-205,Vrundavan Residency<br />Besides Shraddha Pioneer<br />Hathijan,Ahmedabad-382445<br />Gujarat,India</p>
                   </div>
                 </div>
-{/*
+
                 <div className="box">
                   <div className="icon"><FaBuilding /></div>
                   <div className="text">
@@ -52,7 +52,6 @@ export default function Contact() {
                   </div>
                 </div>
 
-*/}                {/* Phone */}
                 <div className="box">
                   <div className="icon"><FaPhone /></div>
                   <div className="text">
@@ -61,7 +60,6 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Email */}
                 <div className="box">
                   <div className="icon"><FaEnvelope /></div>
                   <div className="text">

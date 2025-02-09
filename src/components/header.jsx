@@ -1,54 +1,62 @@
-import { 
-  FaHome, 
-  FaServicestack, 
-  FaEnvelope, 
-  FaPhone, 
-  FaInfoCircle, 
-  FaFacebook, 
-  FaLinkedin, 
-  FaWhatsapp, 
-  FaInstagram, 
-  FaTwitter 
+import {
+  FaHome,
+  FaServicestack,
+  FaEnvelope,
+  FaPhone,
+  FaInfoCircle,
+  FaFacebook,
+  FaLinkedin,
+  FaWhatsapp,
+  FaInstagram,
+  FaTwitter,
+  FaTimes, // Import FaTimes for the close icon
 } from 'react-icons/fa';
 import Footer from "./footer.jsx"
-import {Outlet,NavLink} from "react-router-dom"
+import { Outlet, NavLink } from "react-router-dom"
 import React from "react"
-import logo from "../assets/logo.jpg"
+import logo from "../assets/work.svg"
 import "./css/header.css"
 
-function Nav(){
-  const [isMobile,setIsMobile] = React.useState(false);
+function Nav() {
+  const [isMobile, setIsMobile] = React.useState(false);
 
-  function tooglenNav(){
+  function toggleNav() {
     setIsMobile(prev => !prev);
   }
-  return(
+
+  return (
     <header>
       <section className="container flex flex-center">
         <section className="header-wrapper">
           <section className="logo">
-            <img src={logo} />
+            <img src={logo} alt="Logo" /> {/* Added alt attribute for accessibility */}
           </section>
-          <nav className={isMobile ? "mobile-open":null}>
+          <nav className={isMobile ? "mobile-open" : null}>
+            {/* Close Button */}
+            {isMobile && (
+              <section className="close-button-container">
+                <FaTimes className="close-button" onClick={toggleNav} />
+              </section>
+            )}
             <ul className="head-list">
-              <NavLink to="/">
+              <NavLink to="/" onClick={() => setIsMobile(false)}>
                 <FaHome /><p>Home</p>
               </NavLink>
-              <NavLink to="/services">
+              <NavLink to="/services" onClick={() => setIsMobile(false)}>
                 <FaServicestack /><p>Services</p>
               </NavLink>
-              <NavLink to="/enquiry">
+              <NavLink to="/enquiry" onClick={() => setIsMobile(false)}>
                 <FaEnvelope /><p>Enquiry</p>
               </NavLink>
-              <NavLink to="/contactus">
+              <NavLink to="/contactus" onClick={() => setIsMobile(false)}>
                 <FaPhone /> <p>Contact US</p>
               </NavLink>
-              <NavLink to="/aboutus">
+              <NavLink to="/aboutus" onClick={() => setIsMobile(false)}>
                 <FaInfoCircle /><p> About Us</p>
               </NavLink>
             </ul>
             <section className="social-media">
-              <div className={isMobile ? "social-icons":"none"}>
+              <div className={isMobile ? "social-icons" : "none"}>
                 <a href="tel:+91 1234567890" target="_blank" rel="noopener noreferrer">
                   <FaPhone />
                 </a>
@@ -70,7 +78,7 @@ function Nav(){
               </div>
             </section>
           </nav>
-          <section className={isMobile?"hamburger rotate":"hamburger"} onClick={tooglenNav}>
+          <section className={isMobile ? "hamburger rotate" : "hamburger"} onClick={toggleNav}>
             <span></span>
             <span></span>
             <span></span>
@@ -81,11 +89,11 @@ function Nav(){
   )
 }
 
-export default function Header(){
-  return(
+export default function Header() {
+  return (
     <>
       <Nav />
-      <Outlet />
+      <Outlet/>
       <Footer />
     </>
   )
