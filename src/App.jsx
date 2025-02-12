@@ -5,6 +5,7 @@ import About from "./components/about.jsx"
 import Contact from "./components/contact.jsx"
 import Form from "./components/form.jsx"
 import Main from "./components/home.jsx"
+import Gallery from "./components/gallery.jsx"
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 export default function App(){
   return(
@@ -17,6 +18,7 @@ export default function App(){
           <Route path="/services/:id" element={<ServicePage />} />
           <Route index element={<Main />} />
           <Route path="/enquiry" element={<Form />} />
+          <Route path="/gallery" element={<Gallery />} />
         </Route>
       </Routes>
     </BrowserRouter>

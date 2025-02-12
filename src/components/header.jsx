@@ -1,5 +1,6 @@
 import {
   FaHome,
+  FaImages,
   FaServicestack,
   FaEnvelope,
   FaPhone,
@@ -45,6 +46,11 @@ function Nav() {
               <NavLink to="/services" onClick={() => setIsMobile(false)}>
                 <FaServicestack /><p>Services</p>
               </NavLink>
+              <NavLink
+                  to="/gallery"
+                  onClick={() => setIsMobile(false)}>
+                  <FaImages /><p>Service Gallery</p>
+              </NavLink>
               <NavLink to="/enquiry" onClick={() => setIsMobile(false)}>
                 <FaEnvelope /><p>Enquiry</p>
               </NavLink>
@@ -57,9 +63,6 @@ function Nav() {
             </ul>
             <section className="social-media">
               <div className={isMobile ? "social-icons" : "none"}>
-                <a href="tel:+91 1234567890" target="_blank" rel="noopener noreferrer">
-                  <FaPhone />
-                </a>
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
                   <FaFacebook />
                 </a>
@@ -71,9 +74,6 @@ function Nav() {
                 </a>
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
                   <FaInstagram />
-                </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                  <FaTwitter />
                 </a>
               </div>
             </section>

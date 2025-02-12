@@ -48,7 +48,7 @@ export default function Contact() {
                   <div className="icon"><FaBuilding /></div>
                   <div className="text">
                     <h3>Corporate Office</h3>
-                    <p>456 Business Avenue<br />Lahore, Punjab<br />Pakistan</p>
+                    <p>B/H Khadayata Bhuvan<br />Kapadvanj Road,Arban Nagar Society<br />Dakor-388225<br />Gujarat</p>
                   </div>
                 </div>
 
@@ -56,7 +56,7 @@ export default function Contact() {
                   <div className="icon"><FaPhone /></div>
                   <div className="text">
                     <h3>Phone</h3>
-                    <p>+91 9714820103</p>
+                    <p><a href="tel:+919714820103">+91 9714820103</a><br /><a href="tel:+919904222841">+91 9904222841</a></p>
                   </div>
                 </div>
 
@@ -64,7 +64,11 @@ export default function Contact() {
                   <div className="icon"><FaEnvelope /></div>
                   <div className="text">
                     <h3>Email</h3>
-                    <p>qualityconsulting04@gmail.com</p>
+                    <p>
+                      <a href="mailto:qualityconsulting04@gmail.com">qualityconsulting04@gmail.com</a>
+                      <br /><br />
+                      <a href="mailto:Info@qualityconsulting.co.in">Info@qualityconsulting.co.in</a>
+                    </p>
                   </div>
                 </div>
 
@@ -100,7 +104,7 @@ export default function Contact() {
         {/* Google Maps Container */}
         <section className="google-maps">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322244!2d74.3453941!3d31.5197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e58107d9%3A0xc23eff6b5d1d6c3!2sLahore!5e0!3m2!1sen!2s!4v1625079683922!5m2!1sen!2s"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.3486230084595!2d72.6726112724347!3d22.93738453333775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e8997319bf835%3A0x30cb4a4a45e5eb11!2sVrundavan%20residency!5e0!3m2!1sen!2sin!4v1739388771116!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
             width="100%"
             height="450"
             style={{ border: 0 }}

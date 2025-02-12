@@ -2,7 +2,7 @@ import React from "react";
 import first from "../assets/main/first.jpg";
 import second from "../assets/main/second.jpg";
 import {Link} from "react-router-dom"
-import { FaCertificate, FaLeaf, FaUtensils, FaShieldAlt } from 'react-icons/fa';
+import { FaCertificate, FaLeaf, FaUtensils, FaShieldAlt, FaIndustry, FaWrench, FaTrain } from 'react-icons/fa';
 
 import "./css/home.css";
 const ImageChanger = () => {
@@ -110,7 +110,7 @@ export default function Main() {
                 <div className="wrapper">
             <div className="basicinfo">
                 <h2>Quality Consulting</h2>
-                <h1>ISO Consultant in Ahmedabad, ISO Certification in Ahmedabad, ISO Certification Consultant in Ahmedabad</h1>
+                <h1>ISO Consultant in Gujarat, ISO Certification in Gujarat, ISO Certification Consultant in Gujarat</h1>
                 <p>
                     The Company is promoted by 10 years industrial experience related to ISO Management systems with an aim to provide effective and result-oriented services of ISO 9001:2015 Quality management system, EN ISO 3834-2:2021, EN ISO 1090-2:2018, ISO 14001:2015, ISO 45001:2018, ISO 27001:2013, IATF 16949:2016, ISO 22163:2017, HACCP, ISO 22000:2018, FSSC 22000, BRC for Food & Packaging Material, Eco Vadis CSR Rating, SA 8000:2014, SMETA, ISO 17025:2017 NABL, and various statistical tools.
                     Quality Consulting is certified for various industries including Engineering, Fabrication, Machinery, Pharmaceutical, Packaging, Food, Automotive, Textile, Rubber, and Civil.
@@ -120,10 +120,26 @@ export default function Main() {
                 <p>Our team of experts is equipped with the latest knowledge and skills to tackle any challenge in the industry.</p>
             </div>
             <h2 className="allservicestitle">
-                        Services - ISO Consultant and Certification in Ahmedabad
+                        Services - ISO Consultant and Certification in Gujarat
                     </h2>
             <div className="allservices">
-                <div className="servicecard">
+            <div className="servicecard">
+                <FaWrench className="iconn col3" />
+                <h3>ISO 3834</h3>
+                <p> Welding Workshop Approval for Quality Requirements of Fusion welding in meta.</p>
+            </div>
+            <div className="servicecard">
+                <FaIndustry className="iconn col5" />
+                <h3>EN 1090</h3>
+                <p>CE Mark Steel Structure Part of Steel structure in metallic materials.</p>
+            </div>
+            <div className="servicecard">
+                <FaTrain className="iconn col6" />
+                <h3>EN 15085</h3>
+                <p>Manufacturing of Railway Vehicles or of components of Railway Vehicles</p>
+            </div>
+            
+            <div className="servicecard">
                 <FaCertificate className="iconn col1" />
                 <h3>Quality Management</h3>
                 <p>Achieve excellence in quality management with our ISO 9001 certification services.</p>
@@ -132,11 +148,6 @@ export default function Main() {
                 <FaLeaf className="iconn col2" />
                 <h3>Environmental Management</h3>
                 <p>Enhance your environmental management practices with our ISO 14001 certification.</p>
-            </div>
-            <div className="servicecard">
-                <FaUtensils className="iconn col3" />
-                <h3>Food Safety Management System</h3>
-                <p>Ensure food safety and quality with our ISO 22000 certification services.</p>
             </div>
             <div className="servicecard">
                 <FaShieldAlt className="iconn col4" />
@@ -228,8 +239,8 @@ function Slider() {
 
     return (
         <div className="clients">
-            <h1 className="allservicestitle bottomtitle">Types of Clients Catered - ISO Certification in Ahmedabad, ISO Consultant in Ahmedabad</h1>
-            <p className="para">Hire experienced ISO Certification Consultant in Ahmedabad for quick assistance with the ISO certification process.</p>
+            <h1 className="allservicestitle bottomtitle">Types of Clients Catered - ISO Certification in Gujarat, ISO Consultant in Gujarat</h1>
+            <p className="para">Hire experienced ISO Certification Consultant in Gujarat for quick assistance with the ISO certification process.</p>
             <div className="imageswrapper">
                 <button onClick={handlePrev} disabled={currentIndex === 0} className="nav-btn">←</button>
                 <div className="images-container">

@@ -26,7 +26,7 @@ main {
   justify-content: center;
   flex-direction: column;
   padding: 2rem;
-  width: 180px;
+  width: 200px;
   height: 250px;
   border-radius: 15px;
   gap: 1.5rem;
@@ -59,11 +59,11 @@ main {
 }
 
 .card img {
-  width: 220px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
+  width: 245px;          /* Make the image fill the width of the container */
+  height: 200px;        /* Set a fixed height for the image */
+  object-fit: cover;    /* Ensure the image covers the entire area, cropping if necessary */
+  border-radius: 10px;  /* Maintain the border radius */
+  transition: transform 0.3s ease; /* Keep the transition for hover effects */
 }
 
 .card:hover img {

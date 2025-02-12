@@ -1,41 +1,23 @@
-.mainimages {
-    position: relative;
-    overflow: hidden; /* Prevents overflow */
-    border-radius: 10px; /* Optional: rounded corners */
-    height: 500px; /* Set a height for the container */
-    animation: backgroundChange 8s infinite; /* Infinite animation */
+.mainimages {     
+    position: relative;     
+    overflow: hidden;
+    border-radius: 10px;
+    height: 500px;
+    animation: backgroundChange 8s infinite;
     margin: 1rem 0;
-    transition: all 0.3s linear;
-}
-/* In your CSS file (e.g., ImageChanger.css) */
-@keyframes fadeInOut {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
+    transition: all 0.3s linear; 
 }
 
+@keyframes fadeInOut {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    100% { opacity: 1; }
+} 
+
 @keyframes backgroundChange {
-    0% {
-        background-image: url('./src/assets/main/first.jpg'); /* First image */
-        background-size: cover;
-        background-position: center;
-    }
-    50% {
-        background-image: url('./src/assets/main/second.jpg'); /* Second image */
-        background-size: cover;
-        background-position: center;
-    }
-    100% {
-        background-image: url('./src/assets/main/first.jpg'); /* Back to first image */
-        background-size: cover;
-        background-position: center;
-    }
+    0% { background-image: url('./src/assets/main/first.jpg'); }
+    50% { background-image: url('./src/assets/main/second.jpg'); }
+    100% { background-image: url('./src/assets/main/first.jpg'); }
 }
 
 .overlay {
@@ -43,58 +25,83 @@
     top: 50%;
     left: 80%;
     transform: translate(-50%, -50%);
-    color: #ffffff; /* White text */
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Text shadow for depth */
-    z-index: 10; /* Ensure overlay is above the image */
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    z-index: 10;
     background-color: rgba(0,0,0,0.6);
     padding: 1rem;
 }
 
-/* Optional styles for better visibility */
 .overlay h2 {
-    font-size: 3.5rem;
+    font-size: 2.6rem;
     text-align: center;
 }
-
 .slider {
     width: 100%;
-    height: 140px;
+    height: 140px; /* Fixed slider height */
     overflow: hidden;
     position: relative;
+    background: #f0f0f0; /* Fallback background */
 }
 
 .slider .list {
     display: flex;
-    width: calc(300px * 70); /* Double the original width */
+    align-items: center; /* Vertical alignment */
+    height: 100%;
     position: absolute;
     animation: slide 70s linear infinite;
-    transition: all 0.2s linear;
-}
-
-.slider:hover .list {
-    animation-play-state: paused !important;
 }
 
 .item {
-    width: 300px;
-    height: 130px;
-    flex-shrink: 0;
+    flex: 0 0 300px; /* Fixed item width */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px; /* Spacing between items */
 }
 
 .item img {
-    width: 300px;
-    height: 130px;
-    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    min-height: 130px;
+    max-width: 100%; /* Ensure image doesn't exceed item width */
+    max-height: 100%; /* Ensure image doesn't exceed slider height */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Show full image without cropping */
+    object-position: center;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Keep existing animation and hover styles */
+.slider:hover .list {
+    animation-play-state: paused;
 }
 
 @keyframes slide {
-   0% { transform: translateX(0); }
-   100% { transform: translateX(calc(-300px * 35)); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-300px * 35)); }
+}
+
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+    .item {
+        flex: 0 0 250px; /* Smaller items on mobile */
+        padding: 0 5px;
+    }
+    
+    @keyframes slide {
+        100% { transform: translateX(calc(-250px * 35)); }
+    }
+}
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-300px * 35)); }
 }
 
 .wrapper {
     width: 100%;
-    padding: 30px; /* Increased padding */
+    padding: 30px;
     background-color: var(--dark-background);
     gap:5rem;
 }
@@ -103,16 +110,20 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    margin-right: 30px; /* Increased margin for spacing */
+    margin-right: 30px;
     padding-bottom: 5rem;
     border-bottom: 1px solid var(--main-white);
 }
+
 .allservicestitle{
-    text-align: center; margin: 20px 0; color: var(--blue);
+    text-align: center;
+    margin: 20px 0;
+    color: var(--blue);
     font-size: 2.7rem;
     margin-top: 5rem;
     position: relative;
 }
+
 .allservicestitle::before{
     left: 50%;
 }
@@ -121,10 +132,9 @@
     flex: 0 1 calc(33.333% - 1.5rem);
     min-width: 320px;
     max-width: 420px;
-    background-color: var(--headline); /* Deep blue-gray background */
+    background-color: var(--headline);
     border-radius: 15px;
     padding: 25px;
-    margin: 15px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
@@ -133,7 +143,6 @@
     border: 2px solid var(--primary-color);
     position: relative;
     overflow: hidden;
-
 }
 
 .servicecard::before {
@@ -163,7 +172,6 @@
     margin-bottom: 1rem;
     text-align: center;
     width: 100%;
-    background-color: none;
 }
 
 .servicecard h3 {
@@ -182,7 +190,6 @@
     flex-grow: 1;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 1200px) {
     .servicecard {
         flex: 0 1 calc(50% - 1.5rem);
@@ -198,80 +205,115 @@
     }
 }
 
+/* New responsive adjustments for small screens */
+@media (max-width: 440px) {
+    .servicecard {
+        min-width: unset;
+        width: 95%;
+        max-width: 95%;
+        margin: 10px auto;
+    }
+    
+    .wrapper {
+        padding: 15px;
+    }
+    
+    .allservices {
+        padding: 10px;
+    }
+    
+    .basicinfo h2 {
+        font-size: 3rem;
+    }
+    
+    .basicinfo h1 {
+        font-size: 2rem;
+    }
+    
+    .servicecard h3 {
+        font-size: 2rem;
+    }
+    
+    .servicecard p {
+        font-size: 1.5rem;
+    }
+}
+
 .allservices {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: stretch;
     gap: 2rem;
     padding: 20px;
     width: 100%;
 }
 
-/* Additional styles for headings in basicinfo section */
 .basicinfo h2 {
-    font-size: 4rem; /* Font size for subheading */
-    color: var(--blue); /* Use main button color for subheading */
+    font-size: 4rem;
+    color: var(--blue);
     text-align: left;
 }
 
 .basicinfo h1 {
-    font-size: 2.6rem; /* Font size for main heading */
-    color: var(--sec-btn); /* Use secondary button color for main heading */
+    font-size: 2.6rem;
+    color: var(--sec-btn);
     position: relative;
     text-align: left;
 }
+
 .basicinfo h1::before{
     position: absolute;
     content: '';
     height: 0.3rem;
     left: 0%;
     bottom: -1rem;
-    background-color: var(--sec-btn); /* Use secondary button color for main heading */
+    background-color: var(--sec-btn);
     width: 10%;
 }
+
 .basicinfo p{
     font-size: 1.8rem;
     color: var(--main-white);
     text-align: left;
 }
+
 @media (max-width:990px){
-
-   .basicinfo {
-       margin-right : 0; 
-       margin-bottom :20px; 
-       text-align:center; /* Center text in basic info section on small screens */
-   }
-
-   .allservices {
-       flex-direction : column; /* Stack cards vertically on smaller screens */
-       align-items:center; /* Center align cards on small screens */
-       gap:.5rem ;/* Space between cards*/
-   }
-
-   .servicecard {
-       width : calc(100% - 30%); /* Full width on small screens with some margin */
-       max-width:none ;/* Remove max-width on small screens*/
-   }
+    .basicinfo {
+        margin-right: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .allservices {
+        flex-direction: column;
+        align-items: center;
+        gap: .5rem;
+    }
+    
+    .servicecard {
+        width: calc(100% - 30%);
+        max-width: none;
+    }
 }
-@media (max-width :768px) {
+
+@media (max-width:768px) {
     .contactplease{
         display: flex;
         flex-direction: column;
         gap: 2rem;
     }
-   .wrapper {
-       flex-direction : column; /* Stack elements vertically on smaller screens */
-       align-items:center; /* Center align items on smaller screens */
+    
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
-   }
-
-   .basicinfo {
-       margin-right : 0; 
-       margin-bottom :20px; 
-       text-align:center; /* Center text in basic info section on small screens */
-   }
-
+    }
+    
+    .basicinfo {
+        margin-right: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
 }
 
 .images-container {
@@ -279,18 +321,16 @@
     overflow: hidden;
     align-items: center;
     justify-content: center;
-    width: 100%; /* Ensure full width */
+    width: 100%;
     gap: 2rem;
-
 }
 
 .images {
-    margin: 10px; /* Space around each image wrapper */
+    margin: 10px;
     padding: 1rem;
     border-radius: 2rem;
     background-color: var(--white);
 }
-
 
 .clients {
     padding: 20px;
@@ -299,33 +339,36 @@
     width: 100%;
     text-align: center;
 }
+
 .imageswrapper {
     margin-top: 2rem;
     width: 100%;
     display: flex;
-    align-items: center; /* Center align items vertically */
+    align-items: center;
     justify-content: space-between;
 }
+
 .images img {
-    width: 200px; /* Set a fixed width for images */
-    height: 300px; /* Maintain aspect ratio */
-    border-radius: 5px; /* Rounded corners for images */
+    width: 200px;
+    height: 300px;
+    border-radius: 5px;
 }
 
 .nav-btn {
-    background-color: var(--main-btn); /* Button color */
-    color: var(--white); /* Text color */
-    border: none; /* Remove border */
-    padding: 10px; /* Padding around the button */
-    cursor: pointer; /* Pointer cursor on hover */
-    border-radius: 5px; /* Rounded corners for buttons */
+    background-color: var(--main-btn);
+    color: var(--white);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .nav-btn:hover {
-    background-color: var(--sec-btn); /* Change color on hover */
+    background-color: var(--sec-btn);
 }
+
 .nav-btn[disabled] {
-    background-color: var(--text-color); /* Gray out disabled buttons */
+    background-color: var(--text-color);
 }
 
 .contactplease{
@@ -335,10 +378,12 @@
     padding: 2rem 0;
     background-color: var(--secondary-orange);
 }
+
 .contactplease h1{
     font-size: 2rem;
     color: var(--white);
 }
+
 .contactplease button{
     padding: 0.8rem 1.3rem;
     font-size: 2rem;
@@ -347,6 +392,7 @@
     border-radius: 0.5rem;
     border: none;
 }
+
 .contactplease a{
     color: var(--white);
 }
@@ -354,9 +400,10 @@
 .bottomtitle{
     font-size: 2.7rem;
     text-align: left;
-    color:var(--headline); 
+    color:var(--headline);
     position: relative;
 }
+
 .bottomtitle::before{
     content: '';
     position: absolute;
@@ -367,26 +414,9 @@
     height: 0.3rem;
     opacity: 0.8;
 }
-.col1 {
-  fill: #F39C12; /* Vivid Red-Orange */
-  display: inline-block;
-  padding: 5px;
-}
-
-.col2 {
-  fill: #2ECC71; /* Deep Purple */
-  display: inline-block;
-  padding: 5px;
-}
-
-.col3 {
-  fill: #7D3C98; /* Emerald Green */
-  display: inline-block;
-  padding: 5px;
-}
-
-.col4 {
-  fill: #FF5733; /* Bright Orange */
-  display: inline-block;
-  padding: 5px;
-}
+.col1 { fill: #F39C12; }
+.col2 { fill: #2ECC71; }
+.col3 { fill: #777; }
+.col4 { fill: #FF5733; }
+.col5 { fill: #3498DB; }
+.col6 { fill: #A04000; }

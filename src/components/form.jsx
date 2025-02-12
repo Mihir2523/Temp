@@ -86,7 +86,7 @@ export default function Form() {
           <div className="form-row textarea">
             <div className="input-data">
               <textarea cols="30" rows="10" name="message"></textarea>
-              <label htmlFor="message">Your Message</label>
+              <label htmlFor="message">Subject of Enquiry</label>
             </div>
           </div>
           <div className="form-row">
