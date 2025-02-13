@@ -77,7 +77,7 @@ export default function Contact() {
                   <div className="icon"><FaGlobe /></div>
                   <div className="text">
                     <h3>Website</h3>
-                    <a target="_blank" className="website" href="https://www.qualityconsulting.co.in"><p>www.qualityconsulting.co.in</p></a>
+                    <a target="_blank" className="website" href="https://www.qualityconsulting-consultant.business.site"><p>www.qualityconsulting-consultant.business.site</p></a>
                   </div>
                 </div>
               </div>
@@ -108,7 +108,7 @@ export default function Contact() {
             width="100%"
             height="450"
             style={{ border: 0 }}
-            allowFullScreen=""
+            allowFullScreen
             loading="lazy"
           ></iframe>
         </section>

@@ -23,7 +23,7 @@
 .overlay {
     position: absolute;
     top: 50%;
-    left: 80%;
+    left: 60%;
     transform: translate(-50%, -50%);
     color: #ffffff;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
@@ -420,3 +420,199 @@
 .col4 { fill: #FF5733; }
 .col5 { fill: #3498DB; }
 .col6 { fill: #A04000; }
+
+
+/* ====================Change after===========================*/
+/* ========================= Service Card Adjustments ========================= */
+.servicecard {
+    flex: 0 1 calc(33.333% - 1.5rem);
+    min-width: 280px; /* Reduced minimum width */
+    max-width: 420px;
+    background-color: var(--headline);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
+    margin: 10px auto; /* Centering cards on smaller screens */
+}
+
+/* Responsive Adjustments for Small Screens */
+@media (max-width: 768px) {
+    .servicecard {
+        flex: 0 1 calc(50% - 1.5rem); /* Two cards per row on medium screens */
+        min-width: 250px; /* Further reduced minimum width */
+        padding: 20px; /* Reduced padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .servicecard {
+        flex: 0 1 100%; /* Full width on small screens */
+        min-width: unset; /* Remove minimum width constraint */
+        max-width: 100%; /* Allow cards to take full width */
+        padding: 15px; /* Smaller padding */
+    }
+
+    .servicecard h3 {
+        font-size: 1.8rem; /* Smaller heading */
+    }
+
+    .servicecard p {
+        font-size: 1.4rem; /* Smaller text */
+    }
+
+    .servicecard .iconn {
+        font-size: 3rem; /* Smaller icons */
+    }
+}
+
+/* ========================= Container Adjustments ========================= */
+.allservices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px; /* Limit container width */
+    margin: 0 auto; /* Center the container */
+}
+
+@media (max-width: 768px) {
+    .allservices {
+        gap: 1rem; /* Reduced gap between cards */
+        padding: 10px; /* Reduced padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .allservices {
+        gap: 0.5rem; /* Minimal gap for small screens */
+        padding: 5px; /* Minimal padding */
+    }
+}
+
+/* ========================= General Adjustments ========================= */
+.wrapper {
+    width: 100%;
+    padding: 30px;
+    background-color: var(--dark-background);
+    gap: 5rem;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 20px; /* Reduced padding */
+        gap: 3rem; /* Reduced gap */
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        padding: 10px; /* Minimal padding */
+        gap: 2rem; /* Minimal gap */
+    }
+}
+
+/* ========================= Slider Adjustments ========================= */
+.slider {
+    width: 100%;
+    height: 140px; /* Fixed slider height */
+    overflow: hidden;
+    position: relative;
+    background: #f0f0f0; /* Fallback background */
+}
+
+.slider .list {
+    display: flex;
+    align-items: center; /* Vertical alignment */
+    height: 100%;
+    position: absolute;
+    animation: slide 70s linear infinite;
+}
+
+.item {
+    flex: 0 0 300px; /* Fixed item width */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px; /* Spacing between items */
+}
+
+.item img {
+    min-height: 130px;
+    max-width: 100%; /* Ensure image doesn't exceed item width */
+    max-height: 100%; /* Ensure image doesn't exceed slider height */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Show full image without cropping */
+    object-position: center;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .item {
+        flex: 0 0 250px; /* Smaller items on mobile */
+        padding: 0 5px;
+    }
+
+    @keyframes slide {
+        100% { transform: translateX(calc(-250px * 35)); }
+    }
+}
+
+@media (max-width: 480px) {
+    .item {
+        flex: 0 0 200px; /* Even smaller items for very small screens */
+        padding: 0 3px;
+    }
+
+    @keyframes slide {
+        100% { transform: translateX(calc(-200px * 35)); }
+    }
+}
+
+/* ========================= Other Adjustments ========================= */
+.contactplease {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2rem 0;
+    background-color: var(--secondary-orange);
+}
+
+@media (max-width: 768px) {
+    .contactplease {
+        flex-direction: column; /* Stack items vertically */
+        gap: 1rem; /* Add gap between items */
+        padding: 1.5rem 0; /* Reduced padding */
+    }
+
+    .contactplease h1 {
+        font-size: 1.8rem; /* Smaller text */
+        text-align: center; /* Center text */
+    }
+
+    .contactplease button {
+        font-size: 1.6rem; /* Smaller button text */
+        padding: 0.6rem 1rem; /* Smaller button padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .contactplease h1 {
+        font-size: 1.6rem; /* Even smaller text */
+    }
+
+    .contactplease button {
+        font-size: 1.4rem; /* Even smaller button text */
+    }
+}

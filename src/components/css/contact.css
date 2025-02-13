@@ -260,3 +260,111 @@ main {
     max-height: 200px;
   }
 }
+
+/* ... (keep existing styles unchanged) */
+
+/* ========================= 390px Breakpoint ========================= */
+@media screen and (max-width: 390px) {
+  .contact-main {
+    padding: 1rem; /* Reduce overall padding */
+  }
+
+  .contact-container {
+    padding: 1rem; /* Smaller padding */
+    border-radius: 15px; /* Slightly smaller radius */
+  }
+
+  .content h2 {
+    font-size: 2rem !important; /* Smaller heading */
+    margin-bottom: 1rem;
+  }
+
+  .content p {
+    font-size: 1.2rem !important; /* Smaller text */
+  }
+
+  .in-container {
+    gap: 2rem; /* Reduced gap between elements */
+    margin-bottom: 3rem;
+  }
+
+  .contactinfo {
+    padding: 1rem; /* Reduced padding */
+    gap: 1rem; /* Smaller gap between boxes */
+  }
+
+  .box {
+    padding: 1rem; /* Tighter padding */
+    gap: 1rem; /* Smaller icon-text gap */
+  }
+
+  .icon {
+    font-size: 1.8rem !important; /* Smaller icons */
+    padding: 0.5rem !important;
+    min-width: 35px; /* Prevent icon shrinkage */
+  }
+
+  .text h3 {
+    font-size: 1.4rem !important; /* Smaller heading */
+  }
+
+  .text p {
+    font-size: 1.2rem !important; /* Smaller text */
+    line-height: 1.4; /* Tighter line spacing */
+  }
+
+  /* Website link specific adjustments */
+  .website p {
+    font-size: 1.1rem !important;
+    word-break: break-all; /* Force break long URLs */
+  }
+
+  .social-links {
+    padding: 1rem; /* Reduced padding */
+    margin: 1rem 0; /* Smaller margins */
+  }
+
+  .social-links h2 {
+    font-size: 1.6rem !important; /* Smaller heading */
+    margin-bottom: 1rem;
+  }
+
+  .social-icons {
+    gap: 1.5rem; /* Reduced icon spacing */
+  }
+
+  .social-icons li {
+    font-size: 1.8rem !important; /* Smaller icons */
+  }
+
+  .svg img {
+    max-height: 250px; /* Smaller image */
+    margin: 1rem 0; /* Add spacing */
+  }
+
+  .google-maps iframe {
+    height: 300px; /* Shorter map height */
+  }
+
+  /* Disable hover effects on mobile */
+  .box:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .box:hover::before {
+    width: 0;
+  }
+}
+
+/* Existing 600px media query */
+@media screen and (max-width: 600px) {
+  /* Add these adjustments */
+  .text p a {
+    word-break: break-all; /* Handle email/phone links */
+  }
+  
+  .box {
+    align-items: flex-start; /* Better alignment for stacked content */
+  }
+}

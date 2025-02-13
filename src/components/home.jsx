@@ -33,7 +33,7 @@ const ImageChanger = () => {
   return (
     <div style={mainImagesStyle}>
       <div className="overlay">
-        <h2>ISO Consulting</h2>
+        <h2>ISO Consulting,<br />Business Planning</h2>
       </div>
     </div>
   );
@@ -126,7 +126,7 @@ export default function Main() {
             <div className="servicecard">
                 <FaWrench className="iconn col3" />
                 <h3>ISO 3834</h3>
-                <p> Welding Workshop Approval for Quality Requirements of Fusion welding in meta.</p>
+                <p> Welding Workshop Approval for Quality Requirements of Fusion welding in metallic materials.</p>
             </div>
             <div className="servicecard">
                 <FaIndustry className="iconn col5" />
