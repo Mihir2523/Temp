@@ -77,7 +77,7 @@ export default function Contact() {
                   <div className="icon"><FaGlobe /></div>
                   <div className="text">
                     <h3>Website</h3>
-                    <a target="_blank" className="website" href="https://www.qualityconsulting-consultant.business.site"><p>www.qualityconsulting-consultant.business.site</p></a>
+                    <a target="_blank" className="website" href="https://www.qualityconsulting.co.in"><p>www.qualityconsulting.co.in</p></a>
                   </div>
                 </div>
               </div>

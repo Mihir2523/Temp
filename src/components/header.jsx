@@ -71,10 +71,10 @@ function Nav() {
                 </a>
                 <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
                   <FaWhatsapp />
-                </a>
+                </a>{/*
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
                   <FaInstagram />
-                </a>
+                </a>*/}
               </div>
             </section>
           </nav>
