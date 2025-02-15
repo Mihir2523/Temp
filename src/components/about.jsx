@@ -20,7 +20,7 @@ export default function About() {
           </div>
           <div className="h-para">
             <h1>Client Satisfaction</h1>
-            <p className="para">Client Satisfaction
+            <p className="para">
 Our client centric approach and effective ISO certification consultant services offering ISO 9001 certification, ISO 3834 Certification , EN 1090 Certification, EN 15085 Certification, PED & AD 2000 Certification , NORSORK Certification,  ISO 14001 certification, ISO 22000 certification, ISO 27001 certification, AS 9100C Certification,  IATF 16949 certification, OHSAS 45001 certification, SA 8000 certification, GMP WHO certification, CE marking certification, NABL 17025 certification, IRIS certification and auditing services have returned rave reviews from our clients all across the country. We are known to assist our clients in identifying the areas where they could improve efficiency and effectiveness by minimizing wastage and rejection so that it could improve their marketability. Our close coordination with reputed certification agencies helps providing our clients the most effective and economic services. We are destined to stand side by side with our clients in enhancing competitive advantages over their competitors. All these efforts made by us have resulted in having a strong base of well-known clients from various industrial sectors.</p>
           </div>
           <div className="h-list">

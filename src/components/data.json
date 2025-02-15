@@ -2216,13 +2216,10 @@
     "image": ""
   },
   {
-    "class": "h-list",
+    "class": "h-para",
     "heading": "Registration of Certification",
-    "para": "",
-    "list": [
-      "DNV, TUV Rhineland, TUV Nord, TUV Sud maintains a register of manufacturers that have gained certification under the DNV, TUV Rhineland, TUV Nord, TUV Sud Manufacturer Certification System.",
-      "Information contained on the register about companies and their capability is made freely available via Certification body. This provides an important sales benefit to registered companies."
-    ],
+    "para": "Quality Consulting Provides consultancy services that have gained certification under the DNV, TUV Rhineland, TUV Nord, TUV Sud Manufacturer Certification System.",
+    "list": [],
     "image": ""
   }
 ],

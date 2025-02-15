@@ -67,7 +67,7 @@ export default function Contact() {
                     <p>
                       <a href="mailto:qualityconsulting04@gmail.com">qualityconsulting04@gmail.com</a>
                       <br /><br />
-                      <a href="mailto:Info@qualityconsulting.co.in">Info@qualityconsulting.co.in</a>
+                      <a href="mailto:info@qualityconsulting.co.in">info@qualityconsulting.co.in</a>
                     </p>
                   </div>
                 </div>
